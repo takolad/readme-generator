@@ -14,7 +14,7 @@ const licenseArray = [
     'GNU Lesser General Public License v2.1',
 ];
 
-[
+const prompts = [
     {   // Title
         type: 'input',
         message: 'What is the title of your project?',
@@ -32,7 +32,7 @@ const licenseArray = [
     },
     {   // Usage Information
         type: 'input',
-        message: 'What is the title of your project?',
+        message: 'Enter the usage information:',
         name: 'usage',
     },
     {   // License
@@ -62,3 +62,5 @@ const licenseArray = [
         name: 'email',
     },
 ]
+
+module.exports = prompts;
