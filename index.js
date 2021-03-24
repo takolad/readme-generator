@@ -8,7 +8,8 @@ const questions = require('./questionTemplate');
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    console.log("write file coming soon!");
+    console.log("Filename: " + fileName);
+    console.log(data);
 }
 
 // TODO: Create a function to initialize app
@@ -19,6 +20,7 @@ function init() {
         )
         .then((response) => {
             const readMeText = generateMarkdown(response);
+            writeToFile('README.MD', readMeText);
         })
         .catch(err => console.log(err));
 }
