@@ -1,7 +1,6 @@
-// function that returns a license badge based on which license is passed in
+// Returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-    // the image (link)
     if (license) {
         switch (license) {
             case ('Apache License 2.0'):
@@ -36,7 +35,7 @@ function renderLicenseBadge(license) {
     } else return ''
 }
 
-// function that returns the license link
+// Returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
     if (license) {
@@ -73,7 +72,7 @@ function renderLicenseLink(license) {
     } else return ''
 }
 
-// TODO: Create a function that returns the license section of README
+// Returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
     if (license) {
@@ -83,61 +82,64 @@ function renderLicenseSection(license) {
     } else return ''
 }
 
-// function to generate markdown for README
+// Generates markdown for README
 function generateMarkdown(data) {
+
     // Aquires the matching license badge url
     let licenseImgUrl = renderLicenseBadge(data.license);
     let imgUrlFormatted = '';
-    // Formats the url to be inserted into the template literal to be returned lastly
+    // Formats the url to be inserted as an image link to the top of the template literal
     if (data.license) {
         let imgUrlFormatted = `![${data.license} Badge](${licenseImgUrl})`;
     }
 
+    // License info to be inserted in to the license section of the template literal.
     let licenseString = renderLicenseSection(data.license);
-  return `${imgUrlFormatted}
-  
-  # ${data.title}
-  
-  ## Description
 
-      ${data.description}
+    return `${imgUrlFormatted}
+    
+    # ${data.title}
+    
+    ## Description
 
-  ## Table of Contents
+        ${data.description}
 
-  *[Installation](#installation)
-  *[Usage](#usage)
-  *[License](#license)
-  *[Contributing](#contributing)
-  *[Tests](#tests)
-  *[Questions](#questions)
+    ## Table of Contents
 
-  ## Installation
+    *[Installation](#installation)
+    *[Usage](#usage)
+    *[License](#license)
+    *[Contributing](#contributing)
+    *[Tests](#tests)
+    *[Questions](#questions)
 
-      ${data.install}
+    ## Installation
 
-  ## Usage
+        ${data.install}
 
-      ${data.usage}
+    ## Usage
 
-  ## License
+        ${data.usage}
 
-      ${licenseString}
+    ## License
 
-  ## Contributing
+        ${licenseString}
 
-      ${data.contribute}
+    ## Contributing
 
-  ## Tests
+        ${data.contribute}
 
-      ${data.test}
+    ## Tests
 
-  ## Questions
+        ${data.test}
 
-      If you have any questions, I can be reached at  
-      [GitHub Profile](https://github.com/${data.gitHub}) or
-      [Email](mailto:${data.email}).
+    ## Questions
 
-`;
+        If you have any questions, I can be reached at  
+        [GitHub Profile](https://github.com/${data.gitHub}) or
+        [Email](mailto:${data.email}).
+
+    `;
 }
 
 module.exports = generateMarkdown;
