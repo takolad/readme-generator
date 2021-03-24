@@ -20,8 +20,8 @@ function init() {
         .then((response) => {
             const readMeText = generateMarkdown(response);
             try {
-                writeToFile('./README.MD', readMeText);
-                console.log("Successfully wrote file README.MD");
+                writeToFile('generated/README.md', readMeText);
+                console.log("Successfully wrote file README.md inside \"generated\" directory.");
             } catch(err) { console.log(err) };
         })
         .catch(err => console.log(err));

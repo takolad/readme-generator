@@ -90,55 +90,54 @@ function generateMarkdown(data) {
     let imgUrlFormatted = '';
     // Formats the url to be inserted as an image link to the top of the template literal
     if (data.license) {
-        let imgUrlFormatted = `![${data.license} Badge](${licenseImgUrl})`;
+        imgUrlFormatted = `![${data.license} Badge](${licenseImgUrl})`;
     }
 
     // License info to be inserted in to the license section of the template literal.
     let licenseString = renderLicenseSection(data.license);
 
     return `${imgUrlFormatted}
-    
-    # ${data.title}
-    
-    ## Description
 
-        ${data.description}
+# ${data.title}
 
-    ## Table of Contents
+## Description
 
-    *[Installation](#installation)
-    *[Usage](#usage)
-    *[License](#license)
-    *[Contributing](#contributing)
-    *[Tests](#tests)
-    *[Questions](#questions)
+    ${data.description}
 
-    ## Installation
+## Table of Contents
 
-        ${data.install}
+*[Installation](#installation)
+*[Usage](#usage)
+*[License](#license)
+*[Contributing](#contributing)
+*[Tests](#tests)
+*[Questions](#questions)
 
-    ## Usage
+## Installation
 
-        ${data.usage}
+    ${data.install}
 
-    ## License
+## Usage
 
-        ${licenseString}
+    ${data.usage}
 
-    ## Contributing
+## License
 
-        ${data.contribute}
+    ${licenseString}
 
-    ## Tests
+## Contributing
 
-        ${data.test}
+    ${data.contribute}
 
-    ## Questions
+## Tests
 
-        If you have any questions, I can be reached at  
-        [GitHub Profile](https://github.com/${data.gitHub}) or
-        [Email](mailto:${data.email}).
+    ${data.test}
 
+## Questions
+
+    If you have any questions, I can be reached at  
+    [GitHub Profile](https://github.com/${data.gitHub}) or  
+    [Email](mailto:${data.email}).
     `;
 }
 
