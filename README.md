@@ -7,6 +7,7 @@
 
 *[Installation](#installation)
 *[Usage](#usage)
+*[Screens](#screens)
 *[License](#license)
 *[Questions](#questions)
 
@@ -20,4 +21,16 @@ In a *command-line interface* (PowerShell, CMD, Terminal) run `node -v` to see i
 To use this application first have the associated directory, **readme-generator**, as your *working directory*.  
 Then type `node index.js` to run the app, next fill in information about your product.
 
-![DemoImg](./assets/demoImg.gif)
+## Screens
+
+   ![Demo Gif](./assets/demoImg.gif)
+   ![Generated-README](./assets/generatedImg.png)
+
+## License
+
+   ![MIT License Badge](https://img.shields.io/badge/License-MIT-yellow.svg)
+   [MIT License](https://opensource.org/licenses/MIT)
+
+## Questions
+
+   If you have any questions, comments, concerns I can be reached at my [GitHub Profile](https://github.com/takolad).
